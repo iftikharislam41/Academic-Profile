@@ -452,6 +452,205 @@
       white-space: nowrap;
     }
 
+    /* ── Research Portfolio – Visual Gallery ── */
+    .portfolio-intro {
+      font-size: 0.95rem;
+      color: #556;
+      margin-bottom: 32px;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    .rp-project {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin-bottom: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 18px rgba(26,60,94,0.10);
+    }
+
+    .rp-project.flip {
+      direction: rtl;
+    }
+
+    .rp-project.flip > * {
+      direction: ltr;
+    }
+
+    .rp-figure {
+      position: relative;
+      background: #d6e4f0;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: stretch;
+    }
+
+    .rp-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Placeholder figure box */
+    .rp-fig-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .rp-fig-placeholder .fig-icon {
+      font-size: 2.4rem;
+      opacity: 0.85;
+    }
+
+    .rp-fig-placeholder .fig-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .rp-fig-placeholder .fig-hint {
+      font-size: 0.72rem;
+      opacity: 0.65;
+      font-style: italic;
+    }
+
+    .rp-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10,30,55,0.72);
+      color: #ddeeff;
+      font-size: 0.76rem;
+      padding: 8px 12px;
+      line-height: 1.45;
+      backdrop-filter: blur(2px);
+    }
+
+    .rp-text {
+      background: #fff;
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .rp-number {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #2471a3;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .rp-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a3c5e;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .rp-role {
+      font-size: 0.82rem;
+      color: #2471a3;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .rp-desc {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .rp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .rp-tag {
+      background: #eaf2fb;
+      color: #1a5276;
+      padding: 3px 9px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid #aed6f1;
+    }
+
+    .rp-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .rp-link {
+      display: inline-block;
+      padding: 4px 13px;
+      border-radius: 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.18s;
+    }
+
+    .rp-link.solid {
+      background: #1a3c5e;
+      color: #fff;
+    }
+
+    .rp-link.solid:hover {
+      background: #2471a3;
+      text-decoration: none;
+    }
+
+    .rp-link.ghost {
+      border: 1.5px solid #2471a3;
+      color: #2471a3;
+      background: transparent;
+    }
+
+    .rp-link.ghost:hover {
+      background: #eaf2fb;
+      text-decoration: none;
+    }
+
+    /* Color themes for placeholder figures */
+    .fig-blue   { background: linear-gradient(135deg, #1a3c5e 0%, #2471a3 100%); }
+    .fig-teal   { background: linear-gradient(135deg, #0e6655 0%, #1abc9c 100%); }
+    .fig-indigo { background: linear-gradient(135deg, #2c3e7a 0%, #5b73c9 100%); }
+    .fig-brown  { background: linear-gradient(135deg, #7d5a3c 0%, #c49a6c 100%); }
+    .fig-green  { background: linear-gradient(135deg, #1e6b35 0%, #52b072 100%); }
+    .fig-slate  { background: linear-gradient(135deg, #2e4057 0%, #4a7fa5 100%); }
+    .fig-rust   { background: linear-gradient(135deg, #8b3a2a 0%, #d4724a 100%); }
+    .fig-violet { background: linear-gradient(135deg, #4a235a 0%, #8e44ad 100%); }
+
+    @media (max-width: 680px) {
+      .rp-project, .rp-project.flip { grid-template-columns: 1fr; direction: ltr; }
+      .rp-fig-placeholder { min-height: 200px; }
+    }
+
     /* ── Footer ── */
     .site-footer {
       text-align: center;
@@ -536,6 +735,7 @@
       <button onclick="showTab('publications', this)" role="tab">Publications</button>
       <button onclick="showTab('conferences', this)" role="tab">Conferences</button>
       <button onclick="showTab('service', this)" role="tab">Service &amp; Awards</button>
+      <button onclick="showTab('portfolio', this)" role="tab">Research Portfolio</button>
     </div>
 
     <div class="tab-content">
@@ -897,7 +1097,293 @@
 
       </div><!-- /service -->
 
-    </div><!-- /tab-content -->
+      <!-- ══ RESEARCH PORTFOLIO ══ -->
+      <div id="portfolio" class="tab-panel">
+
+        <div class="section-heading">Research Project Portfolio</div>
+        <p class="portfolio-intro">
+          Visual highlights from research spanning watershed hydrology, GIS and spatial modeling,
+          machine learning, agricultural water management, and water policy.
+          Each project links to publications, presentations, or project pages where available.
+        </p>
+
+        <!-- PROJECT 1 -->
+        <div class="rp-project">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-blue">
+              <div class="fig-icon">&#127853;</div>
+              <div class="fig-label">Agricultural Water Demand Map<br>Central Valley, California</div>
+              <div class="fig-hint">Replace with your figure from COEQWAL analysis</div>
+            </div>
+            <div class="rp-caption">Sub-basin scale agricultural water demand under combined land-use and climate scenarios, Central Valley, CA.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 01 &nbsp;·&nbsp; 2024 – Present</div>
+            <div class="rp-title">Agricultural Water Demand and Land-Use Dynamics in California's Central Valley</div>
+            <div class="rp-role">Postdoctoral Scholar &nbsp;·&nbsp; UC Santa Cruz – COEQWAL &nbsp;·&nbsp; Postdoctoral Research</div>
+            <div class="rp-desc">
+              Develops spatially explicit frameworks to quantify how land-use change and climate forcing interact
+              to reshape agricultural water demand at the sub-basin scale. Preliminary findings reveal non-additive,
+              spatially heterogeneous demand responses under orchard expansion combined with hot-dry climate
+              scenarios — directly relevant to equitable groundwater governance under California's SGMA.
+              Covered by ClimateBrief; presented at AGU Fall Meeting 2025.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">DETAW-DCD</span>
+              <span class="rp-tag">CalSim Hydro</span>
+              <span class="rp-tag">OpenET</span>
+              <span class="rp-tag">SGMA</span>
+              <span class="rp-tag">Land-Use Change</span>
+            </div>
+            <div class="rp-links">
+              <a href="#" class="rp-link solid">AGU 2025 Poster</a>
+              <a href="#" class="rp-link ghost">ClimateBrief Coverage</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="rp-project flip">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-teal">
+              <div class="fig-icon">&#128200;</div>
+              <div class="fig-label">Sensitivity Analysis Framework<br>California Water Infrastructure</div>
+              <div class="fig-hint">Replace with your scenario trade-off figure</div>
+            </div>
+            <div class="rp-caption">Scenario-based sensitivity of reservoir operations, ecological flows, and water deliveries under alternative policy and climate conditions.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 02 &nbsp;·&nbsp; 2024 – Present</div>
+            <div class="rp-title">Sensitivity Analysis of California Water Infrastructure: Reservoir Operations, Ecological Flows, and Deliveries</div>
+            <div class="rp-role">Postdoctoral Scholar &nbsp;·&nbsp; UC Santa Cruz – COEQWAL &nbsp;·&nbsp; Postdoctoral Research</div>
+            <div class="rp-desc">
+              Designed a scenario-based sensitivity analysis framework using the CalLite water system model to
+              evaluate trade-offs across reservoir operations, Delta ecological flows, and water deliveries.
+              A key methodological contribution is the unified treatment of numeric and categorical operational
+              levers within a single analytical design, making complex policy trade-offs accessible to
+              non-technical audiences. Invited talk at the 2025 California Water Data Summit, Davis, CA.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">CalLite</span>
+              <span class="rp-tag">Scenario Analysis</span>
+              <span class="rp-tag">Decision Support</span>
+              <span class="rp-tag">Bay-Delta</span>
+              <span class="rp-tag">Water Policy</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://drive.google.com/drive/folders/1r9tFxC7DuGE4Ru8BEyx5laTSEJZWZbge" target="_blank" class="rp-link solid">Water Data Summit Talk</a>
+              <a href="https://agu.confex.com/agu/agu24/meetingapp.cgi/Paper/1565916" target="_blank" class="rp-link ghost">AGU 2024</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="rp-project">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-indigo">
+              <div class="fig-icon">&#128268;</div>
+              <div class="fig-label">Hydroclimatic Driver Analysis<br>Multi-Model Bayesian Framework</div>
+              <div class="fig-hint">Replace with your variable importance or model comparison figure</div>
+            </div>
+            <div class="rp-caption">Multi-model Bayesian analysis of hydroclimatic controls on streamflow, Upper Rio Grande Basin.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 03 &nbsp;·&nbsp; 2019 – 2025</div>
+            <div class="rp-title">Multi-Model Data-Driven Identification of Hydroclimatic Controls on Streamflow</div>
+            <div class="rp-role">Co-PI &nbsp;·&nbsp; NMSU / USDA Southwest Climate Hub &nbsp;·&nbsp; USDA ARS Funded</div>
+            <div class="rp-desc">
+              Developed a multi-model framework using Bayesian model selection and averaging to quantify
+              the relative influence of precipitation, temperature, soil moisture, and snowpack on runoff
+              and streamflow. Applied to the Upper Rio Grande Basin using remotely sensed hydroclimatic
+              time series, revealing temporal shifts in driver importance and non-stationarity in
+              climate-streamflow relationships under a warming climate.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">Bayesian Model Selection</span>
+              <span class="rp-tag">Remote Sensing</span>
+              <span class="rp-tag">Nonstationarity</span>
+              <span class="rp-tag">Upper Rio Grande</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://doi.org/10.1016/j.jhydrol.2025.132684" target="_blank" class="rp-link solid">J. Hydrology 2025</a>
+              <a href="#" class="rp-link ghost">SSRN Preprint</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="rp-project flip">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-green">
+              <div class="fig-icon">&#127807;</div>
+              <div class="fig-label">Random Forest vs. SWAT<br>Streamflow Prediction</div>
+              <div class="fig-hint">Replace with your model comparison or hydrograph figure</div>
+            </div>
+            <div class="rp-caption">Random Forest machine learning with remotely sensed inputs as an alternative to process-based SWAT modeling, snowmelt-driven watershed.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 04 &nbsp;·&nbsp; 2018 – 2023</div>
+            <div class="rp-title">Random Forest Machine Learning and Remote Sensing for Streamflow Prediction in Snowmelt-Driven Watersheds</div>
+            <div class="rp-role">PI &nbsp;·&nbsp; New Mexico State University &nbsp;·&nbsp; NM WRRI Funded</div>
+            <div class="rp-desc">
+              Applied Random Forest regression with remotely sensed hydroclimatic inputs as a computationally
+              efficient alternative to process-based SWAT modeling. Global sensitivity analysis identified
+              critical parameters governing watershed dynamics. Results demonstrated comparable predictive
+              accuracy to physics-based simulation at substantially lower computational cost, with direct
+              implications for hydrologic forecasting in data-limited and ungauged basins.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">Random Forest</span>
+              <span class="rp-tag">SWAT</span>
+              <span class="rp-tag">Machine Learning</span>
+              <span class="rp-tag">Global Sensitivity</span>
+              <span class="rp-tag">Snowmelt</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://doi.org/10.3390/rs15163999" target="_blank" class="rp-link solid">Remote Sensing 2023</a>
+              <a href="https://doi.org/10.3390/rs14236076" target="_blank" class="rp-link ghost">Remote Sensing 2022</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="rp-project">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-slate">
+              <div class="fig-icon">&#128205;</div>
+              <div class="fig-label">Groundwater Contamination Maps<br>Kriging-Based Spatial Prediction</div>
+              <div class="fig-hint">Replace with your kriging output maps (arsenic, nitrate, fluoride)</div>
+            </div>
+            <div class="rp-caption">Geostatistical prediction of arsenic, nitrate, and fluoride contamination extent in data-sparse rural basins using multiple kriging methods.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 05 &nbsp;·&nbsp; 2019 – 2023</div>
+            <div class="rp-title">Geostatistical Mapping of Groundwater Contamination in Data-Sparse Rural Basins</div>
+            <div class="rp-role">Independent Research &nbsp;·&nbsp; New Mexico State University</div>
+            <div class="rp-desc">
+              Applied six kriging variants — Ordinary, Universal, Empirical Bayesian, Indicator,
+              Co-kriging, and EBK-Regression — to map arsenic, nitrate, and fluoride contamination across
+              rural U.S. basins. Incorporating groundwater pH as a co-variable substantially improved
+              spatial prediction, identifying communities exceeding federal drinking water standards in
+              regions where conventional monitoring networks were too sparse to detect risk. A direct
+              GIScience application to environmental justice.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">Kriging</span>
+              <span class="rp-tag">Geostatistics</span>
+              <span class="rp-tag">Groundwater Quality</span>
+              <span class="rp-tag">Environmental Justice</span>
+              <span class="rp-tag">ArcGIS</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://doi.org/10.1016/j.gsd.2023.101043" target="_blank" class="rp-link solid">GSD 2023</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="rp-project flip">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-brown">
+              <div class="fig-icon">&#127807;</div>
+              <div class="fig-label">County-Level Irrigation Water Use<br>New Mexico</div>
+              <div class="fig-hint">Replace with your GIS map of irrigation water use variability</div>
+            </div>
+            <div class="rp-caption">Spatial and temporal variability in groundwater and surface water irrigation withdrawals, county-level, New Mexico.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 06 &nbsp;·&nbsp; 2019 – 2021</div>
+            <div class="rp-title">County-Level Irrigation Water Use Mapping and Drought Vulnerability Assessment, New Mexico</div>
+            <div class="rp-role">Research Associate &nbsp;·&nbsp; USDA Southwest Climate Hub, Jornada Experimental Range &nbsp;·&nbsp; USDA ARS Funded</div>
+            <div class="rp-desc">
+              Led county-level GIS mapping of irrigation water use (groundwater and surface water) across
+              New Mexico, producing spatially explicit assessments of withdrawal variability under drought
+              conditions. Part of a broader USDA ARS project on biophysical and socio-economic factors
+              affecting drought vulnerability. Also applied cluster analysis to 33 years of rangeland
+              productivity raster time series (1985–2018) to characterize interannual spatial variability
+              across the southwestern U.S.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">GIS Mapping</span>
+              <span class="rp-tag">Irrigation</span>
+              <span class="rp-tag">Drought Vulnerability</span>
+              <span class="rp-tag">USDA ARS</span>
+              <span class="rp-tag">Rangeland</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://www.ars.usda.gov/research/project/?accnNo=436918" target="_blank" class="rp-link solid">USDA ARS Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 7 -->
+        <div class="rp-project">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-rust">
+              <div class="fig-icon">&#10052;</div>
+              <div class="fig-label">Snowpack–Runoff Relationships<br>Upper Rio Grande Basin</div>
+              <div class="fig-hint">Replace with your snowpack or seasonal runoff figure</div>
+            </div>
+            <div class="rp-caption">Shifting snowpack-surface climate relationships and seasonal runoff dynamics under warming conditions, Upper Rio Grande.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 07 &nbsp;·&nbsp; 2019 – 2022</div>
+            <div class="rp-title">Changing Relationships Between Snowpack and Surface Climate in the Upper Rio Grande Basin</div>
+            <div class="rp-role">Co-PI &nbsp;·&nbsp; USDA Southwest Climate Hub / NMSU &nbsp;·&nbsp; USDA Funded</div>
+            <div class="rp-desc">
+              Developed a spatial-statistical modeling framework using remotely sensed hydroclimatic time
+              series to quantify shifts in seasonal snowpack-runoff relationships across the Upper Rio Grande
+              Basin. Identified how a warming climate is altering the timing and magnitude of snowmelt-driven
+              streamflow, with direct implications for water supply forecasting and transboundary water
+              management across the U.S.-Mexico border region.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">Snowpack</span>
+              <span class="rp-tag">Remote Sensing</span>
+              <span class="rp-tag">Rio Grande</span>
+              <span class="rp-tag">Climate Change</span>
+              <span class="rp-tag">Spatial Statistics</span>
+            </div>
+            <div class="rp-links">
+              <a href="https://doi.org/10.3390/rs14236076" target="_blank" class="rp-link solid">Remote Sensing 2022</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 8 -->
+        <div class="rp-project flip">
+          <div class="rp-figure">
+            <div class="rp-fig-placeholder fig-violet">
+              <div class="fig-icon">&#9878;</div>
+              <div class="fig-label">Human Dimensions Framework<br>Water Equity &amp; SGMA</div>
+              <div class="fig-hint">Replace with your stakeholder mapping or equity framework figure</div>
+            </div>
+            <div class="rp-caption">Socio-hydrologic framework for equity analysis of SGMA-driven demand reduction across the San Joaquin Valley and Coastal-Delta systems.</div>
+          </div>
+          <div class="rp-text">
+            <div class="rp-number">Project 08 &nbsp;·&nbsp; 2024 – Present</div>
+            <div class="rp-title">Human Dimensions of Agricultural Water Demand Reduction: Equity Analysis under SGMA</div>
+            <div class="rp-role">Supervising Researcher &nbsp;·&nbsp; UC Santa Cruz – COEQWAL &nbsp;·&nbsp; Mentoring</div>
+            <div class="rp-desc">
+              Designed and delivered lecture modules on human dimensions of water systems, equity analysis,
+              and socio-hydrologic frameworks for intern researchers within COEQWAL. Supervising literature
+              synthesis and stakeholder mapping examining how SGMA-driven demand reduction differentially
+              affects farmers, farmworkers, rural communities, and ecosystems across geographic, institutional,
+              and socioeconomic dimensions — moving the lens from system performance to human consequence.
+            </div>
+            <div class="rp-tags">
+              <span class="rp-tag">Human Dimensions</span>
+              <span class="rp-tag">Water Equity</span>
+              <span class="rp-tag">SGMA</span>
+              <span class="rp-tag">Stakeholder Mapping</span>
+              <span class="rp-tag">Socio-Hydrology</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /portfolio -->
+
+
   </div><!-- /page-wrapper -->
 
   <footer class="site-footer">
